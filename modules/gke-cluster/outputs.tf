@@ -32,3 +32,8 @@ output "cluster_ca_certificate" {
   description = "The public certificate that is the root of trust for the cluster."
   value       = base64decode(google_container_cluster.cluster.master_auth[0].cluster_ca_certificate)
 }
+
+output "instance_group_urls" {
+  description = "The cluster's instance group URLs."
+  value       = google_container_cluster.cluster.instance_group_urls
+}
